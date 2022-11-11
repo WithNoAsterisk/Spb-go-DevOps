@@ -6,7 +6,10 @@ services:
     environment:
       POSTGRES_DB: "spbgo"
       POSTGRES_USER: "admin"
-      POSTGRES_PASSWORD: "passforspb"
+      POSTGRES_PASSWORD: "passforspbi"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
     restart: unless-stopped
+    volumes:
+      - .:/var/lib/postgresql/data
     ports:
       - "5432:5432"
