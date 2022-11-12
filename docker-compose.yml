@@ -4,12 +4,12 @@ services:
     container_name: postgres_container
     image: postgres:15.1
     environment:
-      POSTGRES_DB: "spbgo"
-      POSTGRES_USER: "admin"
-      POSTGRES_PASSWORD: "passforspbi"
+      POSTGRES_DB: "${DB_NAME}"
+      POSTGRES_USER: "${USER}"
+      POSTGRES_PASSWORD: "${PSWD}"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     restart: unless-stopped
     volumes:
-      - .:/var/lib/postgresql/data
+      - /home/u1/pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
