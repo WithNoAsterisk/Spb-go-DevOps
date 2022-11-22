@@ -13,10 +13,18 @@ services:
       - /home/u1/pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-  server:
+  backend:
     build:
       context: ~/spbgo
       dockerfile: Dockerfile
     command: python3 main.py
     depends_on:
       - db
+  nginx:
+    build:
+      dockerfile: Nginx
+    depends_on:
+      - db
+      - backend
+    ports:
+      - "80:80"
