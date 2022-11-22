@@ -17,5 +17,6 @@ services:
     build:
       context: ~/spbgo
       dockerfile: Dockerfile
+    command: make start
     depends_on:
       - db
