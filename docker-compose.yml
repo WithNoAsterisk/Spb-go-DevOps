@@ -17,6 +17,6 @@ services:
     build:
       context: ~/spbgo
       dockerfile: Dockerfile
-    command: make start
+    command: python3 main.py
     depends_on:
       - db
