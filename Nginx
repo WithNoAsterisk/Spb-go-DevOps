@@ -1,3 +1,3 @@
-FROM mhowlett/ngx-stub-status-prometheus
+FROM nginx
 COPY nginx.conf /etc/nginx/
 EXPOSE 80
