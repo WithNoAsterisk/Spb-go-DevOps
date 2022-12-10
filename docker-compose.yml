@@ -20,11 +20,20 @@ services:
     command: python3 main.py
     depends_on:
       - db
+  frontend:
+    build:
+      context: ~/SPBgo
+      dockerfile: ~/Spb-go-DevOps/Front
+    volumes:
+      - ~/SPBgo:/usr/src/app
+    ports:
+      - 3000:3000
   nginx:
     build:
       dockerfile: Nginx
     depends_on:
       - db
       - backend
+      - frontend
     ports:
       - "8080:80"

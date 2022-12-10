@@ -1,0 +1,15 @@
+FROM node:latest
+
+WORKDIR /usr/src/app
+
+COPY ~/SPBGo ./
+
+RUN npm install -g react-scripts
+
+RUN chown -Rh node:node /usr/src/app
+
+USER node
+
+EXPOSE 3000
+
+CMD [ "sh", "-c", "npm install && npm run start" ]
