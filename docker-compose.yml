@@ -22,7 +22,7 @@ services:
       - db
   frontend:
     build:
-      context: /home/u1/SPBgo
+      context: /home/u1/SPBGo
       dockerfile: Front
       target: base
     volumes:
