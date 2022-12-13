@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
   frontend:
-    build: ~/SPBGo/Front
+    build: ~/SPBGo
   nginx:
     build:
       dockerfile: Nginx
