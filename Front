@@ -1,10 +1,9 @@
-FROM node:latest
+FROM node:16
 WORKDIR /frontend
 COPY ./ .
 RUN apt-get update && \
-    apt-get install npm && \
     npm install --silent && \
-    npm install -g serve
+    npm install -g serve:
 RUN npm run build
 EXPOSE 3000
 ENTRYPOINT ["serve", "-s", "build"]

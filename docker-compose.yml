@@ -21,11 +21,7 @@ services:
     depends_on:
       - db
   frontend:
-    build:
-      context: /home/u1/SPBGo
-      dockerfile: Front
-    ports:
-      - 3000:3000
+    build: ~/SPBGo/Front
   nginx:
     build:
       dockerfile: Nginx
