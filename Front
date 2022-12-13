@@ -2,6 +2,7 @@ FROM node:latest
 WORKDIR /frontend
 COPY ./ .
 RUN apt-get update && \
+    apt-get install npm && \
     npm install --silent && \
     npm install -g serve
 RUN npm run build
