@@ -25,14 +25,8 @@ services:
       context: /home/u1/SPBGo
       dockerfile: Front
       target: base
-    volumes:
-      - ./src:/home/node/app/src
-      - ./nodemon.json:/home/node/app/nodemon.json
-    expose:
-      - '3000'
     ports:
       - 3000:3000
-    command: npm run start
   nginx:
     build:
       dockerfile: Nginx

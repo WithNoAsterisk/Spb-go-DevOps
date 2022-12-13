@@ -1,17 +1,9 @@
-FROM node:latest as base
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm i
-
-COPY . .
-
-FROM base as production
-
-ENV NODE_PATH=./build
-
+FROM node:latest
+WORKDIR /frontend
+COPY ./ .
+RUN apt-get update && \
+    npm install --silent && \
+    npm install -g serve
 RUN npm run build
-
-
+EXPOSE 3000
+ENTRYPOINT ["serve", "-s", "build"]
