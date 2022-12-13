@@ -24,7 +24,6 @@ services:
     build:
       context: /home/u1/SPBGo
       dockerfile: Front
-      target: base
     ports:
       - 3000:3000
   nginx:
